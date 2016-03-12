@@ -1,0 +1,129 @@
+.logo{
+    background: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 8px;
+    padding-left: 24px;
+}
+.logo i{
+    background:url(../img/logoMoss.png);
+    width: 50px;
+    background-size: 50px 50px;
+}
+.btn-xl{
+    color: #fff;
+    background-color: #fed136;
+    border-color: #fed136;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 20px 40px;
+}
+section#contact{
+    background-color:#222;
+    background-image:url(../img/contact_bg.png);
+    background-position:center;
+    background-repeat:no-repeat;
+    padding-top:100px;
+    padding-bottom:100px;
+}
+
+section#contact .section-heading{
+    color:#fff;
+}
+section#contact .form-group{
+    margin-bottom:25px;
+}
+section#contact.form-group input,section#contact .form-group textarea{
+    padding:20px;
+}
+section#contact .form-group input.form-control{
+    height:auto;
+}
+section#contact .form-group textarea.form-control{
+    height:236px;
+}
+section#contact .form-control:focus{
+    border-color:#fed136;
+    box-shadow:none;
+}
+section#contact ::-webkit-input-placeholder{
+    font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform:uppercase;
+    font-weight:700;
+    color:#bbb
+}
+section#contact :-moz-placeholder{
+    font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform:uppercase;
+    font-weight:700;
+    color:#bbb
+}
+section#contact ::-moz-placeholder{
+    font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform:uppercase;
+    font-weight:700;
+    color:#bbb
+}
+section#contact :-ms-input-placeholder{
+    font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform:uppercase;
+    font-weight:700;
+    color:#bbb
+
+}
+section#contact .text-danger{
+    color:#e74c3c
+}
+
+
+
+
+footer{
+    padding:25px 0;
+    text-align:center;
+}
+footer span.copyright{
+    line-height:40px;
+    font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform:uppercase;
+    text-transform:none;
+}
+footer ul.quicklinks{
+    margin-bottom:0;
+    line-height:40px;
+    font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform:uppercase;
+    text-transform:none;
+}
+ul.social-buttons{
+    margin-bottom:0;
+}
+ul.social-buttons li a{
+    display:block;
+    background-color:#222;
+    height:40px;
+    width:40px;
+    border-radius:100%;
+    font-size:20px;
+    line-height:40px;
+    color:#fff;
+    outline:0;
+    -webkit-transition:all .3s;
+    -moz-transition:all .3s;
+    transition:all .3s;
+}
+ul.social-buttons li a:hover,ul.social-buttons li a:focus,ul.social-buttons li a:active{
+    background-color:#fed136;
+}
+.overlay {
+background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+background-size: cover;
+height: 100%;
+position: absolute;
+width: 100%;
+opacity: 0.9;
+}
