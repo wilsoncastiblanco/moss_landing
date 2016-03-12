@@ -10,26 +10,26 @@ var submitContact = document.querySelector('#submit');
 
 
 submitContact.onclick = function () {
-	var contactRef = rootRef.child("contact");
+  var contactRef = rootRef.child("contact");
 
-	var newPostRef = contactRef.push();
-	 newPostRef.set({
-	    name: nameInput.value,
-	    email: emailInput.value,
-	    phone: phoneInput.value,
-	    message: messageInput.value
-	  }, callbackSaving());
+  var newPostRef = contactRef.push();
+   newPostRef.set({
+      name: nameInput.value,
+      email: emailInput.value,
+      phone: phoneInput.value,
+      message: messageInput.value
+    }, callbackSaving());
 
 };
 
 callbackSaving = function(error){
-	  // TODO: cambiar los alert por algun error custom en el landing
-	  if (error) {
-	    alert("Data could not be saved." + error);
-	  } else {
-	    alert("Data saved successfully.");
-	    sendMail();
-	  }
+    // TODO: cambiar los alert por algun error custom en el landing
+    if (error) {
+      alert("Data could not be saved." + error);
+    } else {
+      alert("Data saved successfully.");
+      sendMail();
+    }
 }
 
 sendMail = function() {
@@ -55,4 +55,5 @@ sendMail = function() {
      }).done(function(response) {
        console.log(response); // if you're into that sorta thing
      });
-}
+  }
+
