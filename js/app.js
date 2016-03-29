@@ -1,4 +1,3 @@
-var rootRef = new Firebase('https://moss.firebaseio.com/web/');
 
 
 var nameInput = document.querySelector('#name');
@@ -9,51 +8,31 @@ var messageInput =  document.querySelector('#message');
 var submitContact = document.querySelector('#submit');
 
 
-submitContact.onclick = function () {
-  var contactRef = rootRef.child("contact");
+// create a new instance of the Mandrill class with your API key
+var m = new mandrill.Mandrill('7QYub5xMZKFYGucKLUci0w');
 
-  var newPostRef = contactRef.push();
-   newPostRef.set({
-      name: nameInput.value,
-      email: emailInput.value,
-      phone: phoneInput.value,
-      message: messageInput.value
-    }, callbackSaving());
+// create a variable for the API call parameters
 
-};
 
-callbackSaving = function(error){
-    // TODO: cambiar los alert por algun error custom en el landing
-    if (error) {
-      alert("Data could not be saved." + error);
-    } else {
-      alert("Data saved successfully.");
-      sendMail();
-    }
-}
-
-sendMail = function() {
-    $.ajax({
-      type: 'POST',
-      url: 'https://mandrillapp.com/api/1.0/messages/send.json',
-      data: {
-        'key': '7QYub5xMZKFYGucKLUci0w',
-        'message': {
-          'from_email': 'no-reply@montanaopensky.com.co',
-          'to': [
-              {
-                'email': 'wcastiblanco@montanaopensky.com.co',
-                'name': 'Wilson Castiblanco',
-                'type': 'to'
-              }
-            ],
+function sendTheMail() {
+// Send the email!
+  var params = {
+      "message": {
+          "from_email": emailInput.value,
+          "to":[{"email":"info@montanaopensky.com.co"}],
           'autotext': 'true',
-          'subject': 'New contact '+nameInput.value,
+          'subject': 'New contact '+ nameInput.value,
           'html': nameInput.value +" "+ emailInput.value +" "+ phoneInput.value +" "+ messageInput.value
-        }
       }
-     }).done(function(response) {
-       console.log(response); // if you're into that sorta thing
-     });
-  }
+  };
 
+
+    m.messages.send(params, function(res) {
+        console.log(res);
+        location.reload();
+    }, function(err) {
+        console.log(err);
+    });
+
+
+}
