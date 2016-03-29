@@ -190,7 +190,7 @@ section#sky h4{
 #sky .portfolio-item .portfolio-caption{
     max-width:400px;
     margin:0 auto;
-    background-color:#fff;
+    background-color:transparent;
     text-align:center;
     padding:25px;
 }
@@ -281,4 +281,12 @@ section#sky h4{
 .portfolio-modal .modal-backdrop{
     opacity:0;
     display:none;
+}
+
+ul li {
+    color: #777;
+}
+
+div.language-images img {
+    padding: 4px;
 }
